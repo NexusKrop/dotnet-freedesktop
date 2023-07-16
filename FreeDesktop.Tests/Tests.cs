@@ -10,6 +10,11 @@ public class NotificationTest
         var service = new NotificationService();
 
         Assert.That(service.Capabilities.Any());
+
+        foreach (var capability in service.Capabilities)
+        {
+            Console.WriteLine(capability);
+        }
     }
 
     [Test]
@@ -18,7 +23,8 @@ public class NotificationTest
         var service = new NotificationService();
         var toast = new ToastNotification("Test")
         {
-            AppName = "Tests"
+            AppName = "Tests",
+            SoundName = "dialog-error"
         };
 
         Assert.DoesNotThrowAsync(async () =>

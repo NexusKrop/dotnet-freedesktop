@@ -39,7 +39,7 @@ public class NotificationService
             Summary: notification.Summary,
             Body: notification.Body ?? string.Empty,
             Array.Empty<string>(),
-            new Dictionary<string, object>(),
+            notification.Hints,
             notification.Timeout);
 
         notification._id = id;
